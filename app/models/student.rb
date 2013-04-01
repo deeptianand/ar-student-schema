@@ -1,3 +1,6 @@
 require_relative '../../db/config'
 
-# implement your Student model here
+class Student < ActiveRecord::Base
+ has_many :studentteachers, :foreign_key => :student_id
+ has_many :teachers, :through => :studentteachers
+end
